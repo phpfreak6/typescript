@@ -6,3 +6,9 @@ function sendCombinedArray<A, B>(a: A, b: B): [A, B] {
 }
 
 sendCombinedArray<number, string>(5, 'database');
+
+/* Set Default Type In Generic */ 
+
+function sendCombinedArray<A = string, B = number>(a: A, b: B): [A, B] {
+    return [a, b];
+}
