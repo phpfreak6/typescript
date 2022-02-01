@@ -26,3 +26,14 @@ function makeFullName<T extends { firstName: string, lastName: string }>(obj: T)
 }
 const result = makeFullName({ firstName: 'Abhishek', lastName: 'Tyagi', age: 15 });
 console.log(result);
+
+/* Generics with interfaces */
+
+interface Tab<T>{
+    id:number,
+    position:string,
+    data:T
+}
+
+type NumberTab = Tab<number>;
+type StringTab = Tab<string>;
