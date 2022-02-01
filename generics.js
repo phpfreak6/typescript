@@ -15,3 +15,14 @@ function sendCombinedArray<A = string, B = number>(a: A, b: B): [A, B] {
 /* OR condition in generic types  */ 
 
 sendCombinedArray<number|null|string, string>(5, 'database');
+
+/* Extend Generics and make properties optional */
+
+function makeFullName<T extends { firstName: string, lastName: string }>(obj: T) {
+    return {
+        ...obj,
+        fullName: obj.firstName + ' ' + obj.lastName
+    };
+}
+const result = makeFullName({ firstName: 'Abhishek', lastName: 'Tyagi', age: 15 });
+console.log(result);
